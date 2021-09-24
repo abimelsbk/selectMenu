@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Menu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="selector">
+            <div id="selectField">
+                <p id="selectText">Select Social Media</p>
+                <img src="svgs/Down.svg" id="downIcon" alt="">
+            </div>
+            <ul id="list" class="hide">
+                <li class="options">
+                    <img src="svgs/Facebook.svg" alt="">
+                    <p>Facebook</p>
+                </li>
+                <li class="options">
+                    <img src="svgs/Youtube.svg" alt="">
+                    <p>Youtube</p>
+                </li>
+                <li class="options">
+                    <img src="svgs/Instagram.svg" alt="">
+                    <p>Instagram</p>
+                </li>
+                <li class="options">
+                    <img src="svgs/Twitter.svg" alt="">
+                    <p>Twitter</p>
+                </li>
+                <li class="options">
+                    <img src="svgs/Pinterest.svg" alt="">
+                    <p>Pinterest</p>
+                </li>
+                <li class="options">
+                    <img src="svgs/Whatsapp.svg" alt="">
+                    <p>Whatsapp</p>
+                </li>
+                <li class="options">
+                    <img src="svgs/Telegram.svg" alt="">
+                    <p>Telegram</p>
+                </li>
+               
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script>
+        var selectField = document.getElementById("selectField");
+        var selectText = document.getElementById("selectText");
+        var options = document.getElementsByClassName("options");
+        var list = document.getElementById("list")
+        var downIcon = document.getElementById("downIcon")
+
+
+
+        selectField.onclick = function(){
+            list.classList.toggle("hide");
+            downIcon.classList.toggle("rotate");
+
+        }
+
+
+        for(option of options){
+            option.onclick = function(){
+                selectText.innerHTML = this.textContent;
+                list.classList.toggle("hide");
+                downIcon.classList.toggle("rotate");
+            }
+        }
+
+    </script>
+</body>
+</html>
